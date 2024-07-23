@@ -113,6 +113,12 @@ function cleanCart() {
 // Exercise 3
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
+    for (let i =0;  i < cart.length; i++) {
+        let precioEncontrado = cart[i].price
+        total += precioEncontrado
+        
+    }
+    console.log(total)  
 }
 
 // Exercise 4
