@@ -74,6 +74,8 @@ var cart = [];
 
 var total = 0;
 
+
+
 // Exercise 1
 
 function buy(id) {
@@ -84,7 +86,7 @@ function buy(id) {
         if (productoEncontrado.id === id) {
             let ProductoCarrito = false;
 
-// 2. Add found product to the cart array
+            // 2. Add found product to the cart array
             for (let j = 0; j < cart.length; j++) {
                 if (cart[j].id === productoEncontrado.id) {
                     cart[j].quantity += 1
@@ -112,26 +114,48 @@ function cleanCart() {
 
 // Exercise 3
 function calculateTotal() {
+    total = 0 
     // Calculate total price of the cart using the "cartList" array
-    for (let i =0;  i < cart.length; i++) {
-        let precioEncontrado = cart[i].price
-        total += precioEncontrado
-        
+    for (let i = 0; i < cart.length; i++) {
+        total += cart[i].subtotalWithDiscount
     }
-    console.log(total)  
+    console.log(total)
 }
 
 // Exercise 4
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
+    let precioItem = 0 
+
+        cart.forEach(item => {
+            if (item.offer && item.quantity >= item.offer.number) {
+                let descuento = item.price * (item.offer.percent / 100)
+                let descuentoPrecio = item.price - descuento
+                item.subtotalWithDiscount = Math.ceil(descuentoPrecio * item.quantity)
+            }else{
+
+                item.subtotalWithDiscount = item.price * item.quantity
+        }
+    })
 }
+
 
 // Exercise 5
 function printCart() {
+    applyPromotionsCart()
+    calculateTotal()
+    let tr = '<tr>';
     // Fill the shopping cart modal manipulating the shopping cart dom
+    for (let i = 0; i < cart.length; i++) {
+        tr += '<td>' + cart[i].name + '</td>';
+        tr += '<td>' + cart[i].price + '</td>';
+        tr += '<td>' + cart[i].quantity + '</td>';
+        tr += '<td>' + cart[i].subtotalWithDiscount + '</td>';
+        tr += '</tr>';
+    };
+    document.getElementById('cart_list').innerHTML = tr;
+    document.getElementById('total_price').innerHTML = total;
 }
-
-
 // ** Nivell II **
 
 // Exercise 7
