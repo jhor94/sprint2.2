@@ -105,9 +105,9 @@ function buy(id) {
 }
 // Exercise 2
 function cleanCart() {
-
-
-
+    cart.splice(0)
+    console.log("eliminado")
+    console.log(cart)
 }
 
 // Exercise 3
