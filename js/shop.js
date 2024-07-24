@@ -108,8 +108,7 @@ function buy(id) {
 // Exercise 2
 function cleanCart() {
     cart.splice(0)
-    console.log("eliminado")
-    console.log(cart)
+    printCart()
 }
 
 // Exercise 3
@@ -148,13 +147,14 @@ function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
     for (let i = 0; i < cart.length; i++) {
         tr += '<td>' + cart[i].name + '</td>';
-        tr += '<td>' + cart[i].price + '</td>';
+        tr += '<td>' + '$' + cart[i].price + '</td>';
         tr += '<td>' + cart[i].quantity + '</td>';
-        tr += '<td>' + cart[i].subtotalWithDiscount + '</td>';
+        tr += '<td>' + '$' + cart[i].subtotalWithDiscount + '</td>';
         tr += '</tr>';
     };
     document.getElementById('cart_list').innerHTML = tr;
     document.getElementById('total_price').innerHTML = total;
+
 }
 // ** Nivell II **
 
