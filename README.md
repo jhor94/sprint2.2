@@ -2,71 +2,45 @@
 
 ## Introduction
 
-A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.
-
-You will be in charge of setting up an initial demo version of the application for the client: management of the shopping cart and the application of the promotions on the final price. You have 2 weeks to finish, which is how long this sprint lasts.
+Este proyecto de ecommerce implementa funcionalidades clave de carrito de compras usando JavaScript: añadir productos, eliminar productos y actualizar la cantidad de productos en el carrito. La maquetación y los estilos visuales del sitio se han desarrollado con CSS, proporcionando una experiencia de usuario atractiva y fluida.
 
 <br>
 
 ## Requirements
 
-
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-```
-
-2. Unlink your repo from the itacademy repository.
-(Explanation: You have to upload the code to your GitHub repository, not to the IT Academy. That's why you have to unlink your project from IT Academy GitHub with the following command)
-
-```bash
-$ git remote rm origin
-```
-
-3. Link your repo to the repository you have to create in your github account
-(Explanation: Now your project is not linked to any remote repository. In order to upload your code, you have to link your project to the new repository created on github.com using the following command)
-
-```bash
-$ git remote add origin <your repo name!>
-```
+HTML5: Estructura del sitio.
+CSS3: Estilos y maquetación.
+JavaScript: Funcionalidades dinámicas del carrito de compras.
 
 <br>
 
-## Submission
+## Tecnologías
 
-1. Upon completion, run the following commands:
+En este proyecto de ecommerce, se han empleado las siguientes tecnologías:
 
-```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
-```
+Frontend
+HTML5: Para la estructura y el marcado de las páginas web.
+CSS3: Para la maquetación y los estilos visuales del sitio.
+JavaScript: Para la implementación de la lógica del carrito de compras, incluyendo la adición, eliminación y actualización de productos.
 
-2. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
+Herramientas de Desarrollo
+Git: Sistema de control de versiones para el manejo del código fuente.
+npm: Gestor de paquetes de Node.js para instalar y gestionar dependencias.
 
+Imagenes
+Las imagenes han sido extraidas de diversas búsquedas de internet que proporciona un banco de imagenes extenso sobre cada producto.
 
-
-<br>
-
-## Introduction
-
-The statement of the exercise is available on the virtual campus.
+Estas tecnologías permiten crear una aplicación de ecommerce robusta y escalable con una experiencia de usuario óptima.
 
 <br>
 
+## Pasos de Instalación
+Sigue estos pasos para configurar y ejecutar el proyecto de ecommerce en tu entorno local:
 
-## Instructions
+- Clona el repositorio:
+Clona el repositorio del proyecto desde GitHub a tu máquina local utilizando el siguiente comando:
+git clone : https://github.com/jhor94/sprint2.2.git
 
-You have the following indications from the frontend manager:
+- Abre el programa para revisar el código "Para la elaboración del código se ha utilizado Visual Studio Code, por lo que es recomendable utilizar este programa."
 
-- You have prepared the base of the project on which you will work: https://github.com/IT-Academy-BCN/starter-code-frontend-shop
-
-- The base of the project on which you will work has already created all the files, and an initial version of the interface, so you can focus on programming the logic.
-
-- As at the moment we don't consume data from a server using an API, we will work with hardcoded data in the application. For the moment we will implement the logic using a small group of 9 products divided in 3 sections.
-
-- Except for the last level, showing the result of the functions by console is enough.
-
-- The logic to implement will be placed in the src/grocery.js and src/checkout.js files. You will see that the built in functions have already been created for you to implement them.
-
-- It is forbidden to copy the code, since this way you don't learn anything. Furthermore, as you can see, the second release of sprint 5 is a mini-level test with the mentor, in which you will have to demonstrate live that you have acquired the javascript concepts. Don't worry, if you work on the releases you won't have any problems.
+- Abre index.html en tu navegador para visualizar el frontend y empezar a interactuar con la aplicación de ecommerce.
