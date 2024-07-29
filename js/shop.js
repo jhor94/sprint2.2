@@ -116,6 +116,7 @@ function buy(id) {
 function cleanCart() {
     cart.splice(0)
     printCart()
+    updateCartCount()
 }
 
 // Exercise 3
