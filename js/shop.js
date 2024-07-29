@@ -74,9 +74,15 @@ var cart = [];
 
 var total = 0;
 
-
-
 // Exercise 1
+
+function updateCartCount(){
+    let contadorProductos= 0
+    for (let i = 0; i < cart.length; i++) {
+        contadorProductos += cart[i].quantity
+    }
+    document.getElementById("count_product").innerHTML = contadorProductos
+}
 
 function buy(id) {
     console.log(id)
@@ -103,6 +109,7 @@ function buy(id) {
             break;
         }
     }
+    updateCartCount()
     console.log(cart)
 }
 // Exercise 2
@@ -118,38 +125,36 @@ function calculateTotal() {
     for (let i = 0; i < cart.length; i++) {
         total += cart[i].subtotalWithDiscount
     }
-    console.log(total)
 }
 
 // Exercise 4
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
-    let precioItem = 0 
-
         cart.forEach(item => {
             if (item.offer && item.quantity >= item.offer.number) {
                 let descuento = item.price * (item.offer.percent / 100)
                 let descuentoPrecio = item.price - descuento
                 item.subtotalWithDiscount = Math.ceil(descuentoPrecio * item.quantity)
             }else{
-
                 item.subtotalWithDiscount = item.price * item.quantity
         }
     })
 }
 
-
 // Exercise 5
 function printCart() {
     applyPromotionsCart()
     calculateTotal()
-    let tr = '<tr>';
+    let tr = "";
     // Fill the shopping cart modal manipulating the shopping cart dom
     for (let i = 0; i < cart.length; i++) {
+        tr += '<tr>'
         tr += '<td>' + cart[i].name + '</td>';
         tr += '<td>' + '$' + cart[i].price + '</td>';
         tr += '<td>' + cart[i].quantity + '</td>';
-        tr += '<td>' + '$' + cart[i].subtotalWithDiscount + '</td>';
+        tr += '<td>' + '$' + cart[i].subtotalWithDiscount +'</td>';
+        tr += `<td> <button class="custom-primary-button" onclick="addProducts(${cart[i].id})">+</button><td>`
+        tr += `<td> <button class="custom-primary-button" onclick="removeFromCart(${cart[i].id})">-</button><td>`
         tr += '</tr>';
     };
     document.getElementById('cart_list').innerHTML = tr;
@@ -159,9 +164,29 @@ function printCart() {
 // ** Nivell II **
 
 // Exercise 7
-function removeFromCart(id) {
+function removeFromCart(idProducto) {
+    let indiceProducto = cart.findIndex(item => item.id === idProducto)
+    console.log(indiceProducto)
 
+    if(indiceProducto >= 0){
+        if(cart[indiceProducto].quantity > 1){
+            cart[indiceProducto].quantity -= 1
+        }else {
+        cart.splice(indiceProducto, 1)
+        console.log("producto eliminado ")
+        }
+    }else{
+        console.log("no existe el producto")
+    }
+    updateCartCount()
+    printCart()
 }
+
+function addProducts(idProducto){
+    buy(idProducto)
+    printCart()
+}
+
 
 function open_modal() {
     printCart();

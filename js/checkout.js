@@ -2,9 +2,8 @@
 // Exercise 6
 function validate() {
 	var error = 0;
-	let isValid = false
 	// Get the input fields
-	var form = document.getElementById("form1");
+	let form = document.getElementById("form1")
 	var fName = document.getElementById("fName");
 	var fLastName = document.getElementById("fLastN");
 	var fEmail = document.getElementById("fEmail");
