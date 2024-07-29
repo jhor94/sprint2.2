@@ -1,12 +1,12 @@
 # Sprint 2 IT Academy | Shop
 
-## Introduction
+## Introducción
 
 Este proyecto de ecommerce implementa funcionalidades clave de carrito de compras usando JavaScript: añadir productos, eliminar productos y actualizar la cantidad de productos en el carrito. La maquetación y los estilos visuales del sitio se han desarrollado con CSS, proporcionando una experiencia de usuario atractiva y fluida.
 
 <br>
 
-## Requirements
+## Requisitos
 
 HTML5: Estructura del sitio.
 CSS3: Estilos y maquetación.
